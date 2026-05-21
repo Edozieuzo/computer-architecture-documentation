@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Computer Architecture</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        
+        <h1>FOUNDATION</h1>
+
+        <p>Computer Networking Basics is a structured guide that explains how computers connect, communicate, and share information across networks. It breaks down key concepts into simple, organized sections to help beginners understand how modern networks operate.</p>
+
+        <h2></h2>Purpose of This Guide
+
+This documentation is designed to:
+
+* Explain core computer networking concepts in a simple and structured way
+* Show how data moves between devices across different types of networks
+* Introduce essential networking devices, models, and protocols
+* Provide a foundation for further study in networking and cybersecurity
+
+---
+
+What You Will Learn
+
+By going through this guide, you will understand:
+
+* How computers connect and communicate over networks
+* The different types of networks used in real-world systems
+* How network structures (topologies) are designed
+* The role of networking devices like routers and switches
+* How data is transmitted using protocols and models
+* Basic concepts of IP addressing and network security
+
+---
+
+Why Networking Matters
+
+Computer networking is the backbone of modern technology. Every time you:
+
+* Browse the internet
+* Send a message
+* Watch a video online
+* Connect to Wi-Fi
+
+You are using network systems working behind the scenes.
+
+Understanding networking gives you insight into how digital communication actually happens, not just how to use it.
+
+---
+
+How to Use This Guide
+
+This documentation is structured in a step-by-step learning flow. It is recommended to:
+
+* Start from the top and move downward in order
+* Read each section before jumping to advanced topics
+* Use the sidebar navigation to revisit topics anytime
+* Focus on understanding concepts rather than memorizing definitions
+
+---
+
+Quick Overview (What’s inside)
+
+This guide covers:
+
+* Network types and structures
+* Devices that power communication
+* Rules (protocols) that govern data transfer
+* The OSI model (how networking is layered)
+* IP addressing basics
+* Network security fundamentals
+
+---
+
+Transition Line (leads into Layer 2)
+
+Now that the foundation is clear, the next section explores what computer networking actually is and why it exists in the first place.
+
+---
+
+If you want, I can next:
+
+* tighten this to sound more “academic and formal” (for grading)
+* or make it more “modern tech documentation style”
+* or move straight into Layer 2 with the same quality level
+
+
+Good — now we start building the actual understanding. Layer 2 is where you define the subject properly and remove confusion early. If this part is weak, everything later feels vague, so we keep it tight and structured.
+
+---
+
+LAYER 2: FOUNDATIONAL CONCEPTS
+
+What is Computer Networking?
+
+Computer networking is the process of connecting two or more computing devices so they can communicate and share resources. These devices can include computers, smartphones, servers, routers, and other hardware systems.
+
+At its core, networking is about **data exchange** — sending information from one device to another in a structured and reliable way.
+
+---
+
+How Networking Works (Basic Idea)
+
+Networking works by breaking data into smaller units, sending them across a communication medium, and reassembling them at the destination.
+
+This process involves:
+
+* A **sender** (device initiating communication)
+* A **receiver** (device receiving data)
+* A **medium** (wired or wireless connection)
+* A set of **rules (protocols)** that control communication
+
+Without these rules, devices would not understand each other.
+
+---
+
+Why Computer Networks Exist
+
+Networks were created to solve key problems:
+
+* **Resource sharing** → Printers, files, and storage can be shared across devices
+* **Communication** → Enables email, messaging, video calls, and internet browsing
+* **Efficiency** → Reduces duplication of hardware and improves system coordination
+* **Scalability** → Allows systems to grow without complete redesign
+* **Remote access** → Users can access systems from different locations
+
+In simple terms: networking exists to connect systems and reduce isolation between computers.
+
+---
+
+Real-World Examples of Networking
+
+Computer networks are everywhere in daily life:
+
+* The **internet** is the largest global network
+* A **home Wi-Fi network** connects phones, laptops, and smart TVs
+* A **school or office network** connects multiple systems to shared servers
+* **Mobile networks** connect devices using cellular towers
+
+If data is moving between devices, a network is involved.
+
+---
+
+Key Characteristics of a Network
+
+A functional network typically has:
+
+* **Connectivity** → Devices must be able to link together
+* **Communication rules** → Protocols ensure proper data exchange
+* **Reliability** → Data should arrive accurately
+* **Scalability** → Ability to expand without breaking structure
+* **Security** → Protection of data from unauthorized access
+
+These characteristics determine how effective a network is.
+
+---
+
+Core Idea to Remember
+
+Networking is not just about connecting devices — it is about ensuring **structured, reliable communication between systems**.
+
+Everything else in this document builds on that idea.
+
+---
+
+Transition to Next Layer
+
+Now that the basic idea of networking is clear, the next step is to understand the different ways networks are structured in real-world systems.
+
+Next: **Types of Computer Networks**
+
+
+
+Good — this is where the project starts feeling “real.” Layer 3 is the backbone of your whole document because it describes how networks are physically and logically organized. If you mess this up, everything later feels scattered.
+
+---
+
+LAYER 3: CORE NETWORKING BUILDING BLOCKS
+
+---
+
+3.1 Types of Computer Networks
+
+Computer networks are classified based on their size, coverage area, and purpose.
+
+---
+
+LAN (Local Area Network)
+
+A LAN is a network that connects devices within a small geographical area such as a home, office, or school.
+
+It is:
+
+* Fast
+* Secure
+* Limited in range
+
+Example:
+
+* School computer lab network
+* Office Wi-Fi network
+
+---
+
+WAN (Wide Area Network)
+
+A WAN covers a large geographical area, often connecting multiple LANs together.
+
+It is:
+
+* Much larger in scale
+* Slower compared to LAN
+* Dependent on external communication links
+
+Example:
+
+* The Internet (largest WAN)
+* Bank networks connecting branches across cities
+
+---
+
+MAN (Metropolitan Area Network)
+
+A MAN spans a city or large campus.
+
+It sits between LAN and WAN in size.
+
+Example:
+
+* City-wide cable TV network
+* University campus network across multiple buildings
+
+---
+
+PAN (Personal Area Network)
+
+A PAN is a very small network centered around an individual.
+
+It connects personal devices.
+
+Example:
+
+* Bluetooth connection between phone and earbuds
+* Laptop connected to phone hotspot
+
+---
+
+Key Insight
+
+Network type depends mainly on **distance and scale of communication**, not technology.
+
+---
+
+3.2 Network Topologies (How Networks Are Arranged)
+
+Topology refers to the physical or logical layout of devices in a network.
+
+---
+
+Star Topology
+
+All devices connect to a central hub or switch.
+
+* Easy to manage
+* Failure of one device doesn’t affect others
+* Central device is critical point of failure
+
+Example:
+
+* Office network using a switch
+
+---
+
+Bus Topology
+
+All devices share a single communication line.
+
+* Simple and cheap
+* Performance drops as devices increase
+* A break in the main line affects the whole network
+
+Example:
+
+* Early Ethernet systems
+
+---
+
+Ring Topology
+
+Devices are connected in a circular loop.
+
+* Data travels in one direction
+* Easy to install
+* A single failure can disrupt the network
+
+Example:
+
+* Some legacy telecom systems
+
+---
+
+Mesh Topology
+
+Every device is connected to multiple other devices.
+
+* Very reliable
+* Expensive and complex
+* High redundancy
+
+Example:
+
+* Internet backbone infrastructure (partial mesh)
+
+---
+
+Hybrid Topology
+
+A combination of two or more topologies.
+
+* Flexible
+* Used in large organizations
+* Complex design
+
+Example:
+
+* University networks combining star + mesh structures
+
+---
+
+Key Insight
+
+Topology determines **how data flows physically and logically inside a network**, not just how devices are connected.
+
+---
+
+3.3 Networking Devices
+
+These are the hardware components that make networking possible.
+
+---
+
+Router
+
+A router connects different networks and directs data between them.
+
+* Connects LAN to WAN (internet)
+* Uses IP addresses to forward data
+
+Example:
+
+* Home Wi-Fi router
+
+---
+
+Switch
+
+A switch connects devices within the same network and sends data only to the intended device.
+
+* More efficient than hubs
+* Works mainly in LANs
+
+Example:
+
+* Office network switch
+
+---
+
+Hub
+
+A hub sends data to all connected devices regardless of destination.
+
+* Simple but inefficient
+* Mostly obsolete
+
+---
+
+Modem
+
+A modem converts digital signals to analog and vice versa for internet communication.
+
+* Connects home network to ISP
+* Works with routers
+
+---
+
+Access Point
+
+Expands wireless coverage by allowing devices to connect via Wi-Fi.
+
+* Used in large buildings
+* Extends network range
+
+---
+
+Key Insight
+
+Networking devices act as **traffic controllers and communication bridges** inside and between networks.
+
+---
+
+END OF LAYER 3 SUMMARY
+
+At this stage, you now understand:
+
+* Different types of networks (LAN, WAN, MAN, PAN)
+* How networks are physically structured (topologies)
+* The hardware that makes communication possible (devices)
+
+---
+
+Transition to Layer 4
+
+Now that you understand how networks are built and structured, the next step is to understand **how data actually moves inside them using rules and models**.
+
+Next: **Protocols, OSI Model, and IP Addressing**
+
+
+
+Good — Layer 4 is where things stop being “physical structure” and start becoming “how communication actually works.” If Layer 3 is the body of a network, Layer 4 is the nervous system.
+
+---
+
+LAYER 4: COMMUNICATION & LOGIC SYSTEMS
+
+---
+
+4.1 Networking Protocols
+
+Protocols are a set of rules that define how data is transmitted and received across a network. Without protocols, devices would not understand each other even if they are physically connected.
+
+---
+
+HTTP (HyperText Transfer Protocol)
+
+HTTP is used for transferring web pages over the internet.
+
+* Used when browsing websites
+* Not secure by default
+
+Example:
+
+* Loading a website page
+
+---
+
+HTTPS (Secure HTTP)
+
+HTTPS is the secure version of HTTP.
+
+* Encrypts data during transmission
+* Protects user information
+* Used in banking, login pages, e-commerce
+
+Example:
+
+* Online banking login pages
+
+---
+
+FTP (File Transfer Protocol)
+
+FTP is used for transferring files between computers over a network.
+
+* Uploading and downloading files
+* Common in web hosting
+
+Example:
+
+* Uploading website files to a server
+
+---
+
+TCP/IP (Transmission Control Protocol / Internet Protocol)
+
+This is the foundation of modern internet communication.
+
+* TCP ensures data is delivered correctly and in order
+* IP handles addressing and routing of data
+
+Example:
+
+* Sending an email or loading any website
+
+---
+
+Key Insight
+
+Protocols are the “language rules” of networks — they ensure devices communicate in a structured and reliable way.
+
+---
+
+4.2 OSI Model (How Networking is Structured in Layers)
+
+The OSI Model is a conceptual framework that divides network communication into 7 layers. Each layer has a specific role.
+
+---
+
+Layer 1: Physical Layer
+
+Handles physical transmission of data (cables, signals, hardware).
+
+---
+
+Layer 2: Data Link Layer
+
+Ensures error-free transfer between devices on the same network.
+
+---
+
+Layer 3: Network Layer
+
+Handles routing and logical addressing (IP addresses).
+
+---
+
+Layer 4: Transport Layer
+
+Ensures reliable delivery of data between devices.
+
+* Breaks data into packets
+* Reassembles them at destination
+
+---
+
+Layer 5: Session Layer
+
+Manages communication sessions between devices.
+
+* Starts, maintains, and ends connections
+
+---
+
+Layer 6: Presentation Layer
+
+Translates data into a readable format.
+
+* Encryption and compression
+* Data formatting
+
+---
+
+Layer 7: Application Layer
+
+Closest layer to the user.
+
+* Web browsers, email clients, apps
+* Interface for network services
+
+---
+
+Key Insight
+
+The OSI model is not physical — it is a **mental model that helps explain how data moves through a network step-by-step.**
+
+---
+
+4.3 IP Addressing
+
+An IP address is a unique identifier assigned to devices on a network. It allows devices to locate and communicate with each other.
+
+---
+
+IPv4 (Internet Protocol Version 4)
+
+Most commonly used IP format.
+
+* Written as four numbers separated by dots
+
+* Example format: 192.168.1.1
+
+* Limited number of addresses available
+
+---
+
+IPv6 (Internet Protocol Version 6)
+
+Newer version designed to replace IPv4.
+
+* Much larger address space
+* Written in hexadecimal format
+* Solves IPv4 address shortage
+
+---
+
+Subnetting (Basic Idea)
+
+Subnetting divides a large network into smaller networks.
+
+* Improves performance
+* Improves security
+* Helps manage large systems efficiently
+
+---
+
+Key Insight
+
+IP addressing is what allows data to find the correct destination across complex networks.
+
+---
+
+END OF LAYER 4 SUMMARY
+
+At this stage, you now understand:
+
+* How devices communicate using protocols
+* How networking is logically structured (OSI model)
+* How devices are identified and located (IP addressing)
+
+---
+
+Transition to Layer 5
+
+Now that you understand how communication works, the next step is understanding how networks are protected from threats and failures.
+
+Next: **Network Security & Real-World Protection Systems**
+
+
+Good — this is the layer most people rush, but it’s actually where your project starts looking “complete and real-world relevant.” Layer 5 is about control, protection, and closing the loop.
+
+---
+
+LAYER 5: NETWORK SECURITY & REAL-WORLD PROTECTION
+
+---
+
+5.1 What is Network Security?
+
+Network security is the practice of protecting computer networks, devices, and data from unauthorized access, misuse, disruption, or attack.
+
+It ensures three main goals:
+
+* **Confidentiality** → only authorized users can access data
+* **Integrity** → data is not altered without permission
+* **Availability** → systems remain accessible when needed
+
+---
+
+5.2 Firewalls
+
+A firewall is a security system that monitors and controls incoming and outgoing network traffic based on predefined rules.
+
+* Acts as a barrier between trusted and untrusted networks
+* Can be hardware-based or software-based
+* Blocks suspicious or unauthorized traffic
+
+Example:
+
+* A company firewall blocking unsafe websites or unknown connections
+
+---
+
+5.3 Encryption
+
+Encryption is the process of converting data into a coded form so that only authorized parties can read it.
+
+* Protects sensitive information during transmission
+* Used in messaging, banking, and secure websites
+* Requires a key to decrypt data back to readable form
+
+Example:
+
+* WhatsApp messages are encrypted so outsiders cannot read them
+
+---
+
+5.4 VPN (Virtual Private Network)
+
+A VPN creates a secure, encrypted connection over a public network.
+
+* Hides user identity and location
+* Encrypts internet traffic
+* Commonly used for privacy and secure access to networks
+
+Example:
+
+* Accessing company systems remotely from home securely
+
+---
+
+5.5 Common Network Threats
+
+Networks face several types of threats:
+
+Malware
+
+Malicious software designed to damage or disrupt systems.
+
+Phishing
+
+Fake messages or websites used to steal sensitive information.
+
+Denial of Service (DoS/DDoS)
+
+Overloading a system with traffic to make it unavailable.
+
+Unauthorized Access
+
+Hackers gaining access to restricted systems or data.
+
+---
+
+Basic Security Practices
+
+To protect networks, common practices include:
+
+* Using strong passwords and multi-factor authentication
+* Keeping systems and software updated
+* Using firewalls and antivirus tools
+* Limiting access permissions (least privilege principle)
+* Encrypting sensitive data
+
+---
+
+Key Insight
+
+Security is not a single tool — it is a **layered system of protection** built on rules, tools, and user behavior.
+
+Even a strong network design is useless without proper security.
+
+---
+
+END OF LAYER 5 SUMMARY
+
+At this point, you understand:
+
+* How networks are protected
+* How data privacy is maintained
+* How real-world cyber threats operate
+* What tools are used to defend networks
+
+---
+
+Transition to Final Layer
+
+Now that you understand structure, communication, and security, the final step is to consolidate everything into a clear, simple overview.
+
+Next: **Summary & Final Revision Layer**
+
+
+
+
+This layer should feel like: **clear mental closure + revision + confidence check**.
+
+---
+
+LAYER 6: SUMMARY, CONSOLIDATION & REVISION
+
+---
+
+6.1 Full Concept Recap
+
+Computer networking is built on five main ideas:
+
+* **Connection** → devices must be able to link together
+* **Structure** → networks are organized in types and topologies
+* **Communication** → protocols define how data is exchanged
+* **Identification** → IP addresses locate devices
+* **Protection** → security keeps everything safe
+
+Everything in networking fits into one of these categories.
+
+---
+
+6.2 Big Picture Understanding
+
+If you strip everything down, networking works like this:
+
+1. Devices are connected (physically or wirelessly)
+2. They are organized in a structure (LAN, WAN, topology)
+3. They follow rules (protocols like TCP/IP, HTTP)
+4. Data is addressed (IP addresses)
+5. Data is protected (encryption, firewalls, VPNs)
+
+That is the entire system in a simplified form.
+
+---
+
+6.3 Concept Relationships (How everything connects)
+
+To avoid confusion:
+
+* **Devices + Topology → Network Structure (Layer 3)**
+* **Protocols + OSI → Communication Logic (Layer 4)**
+* **IP Addressing → Data Targeting System**
+* **Security → Protection Layer over everything**
+
+Nothing exists in isolation — every part depends on another.
+
+---
+
+6.4 Key Terms You Should Remember
+
+You don’t need to memorize everything, just these anchors:
+
+* LAN / WAN / MAN / PAN
+* Router / Switch / Modem
+* TCP/IP / HTTP / HTTPS
+* OSI Model (7 layers)
+* IP Address (IPv4 / IPv6)
+* Firewall / Encryption / VPN
+
+If you understand these, you understand networking basics.
+
+---
+
+6.5 Common Mistakes Beginners Make
+
+* Mixing up **router vs switch**
+* Thinking **OSI model is physical hardware**
+* Believing **IP address = device permanently**
+* Ignoring **security as optional (it’s not)**
+* Trying to memorize instead of understanding flow
+
+---
+
+6.6 Final Mental Model
+
+Think of networking like a delivery system:
+
+* **Devices** = houses and offices
+* **Topology** = road layout
+* **Protocols** = traffic rules
+* **IP addresses** = house addresses
+* **Data packets** = delivery packages
+* **Security** = guards, locks, and surveillance
+
+If you understand this analogy deeply, you understand networking.
+
+---
+
+FINAL CLOSURE
+
+Computer networking is not complicated when viewed as a system. It is simply:
+
+ “A structured way for devices to communicate, share data, and stay secure.”
+
+
+    </body>
+</html>
