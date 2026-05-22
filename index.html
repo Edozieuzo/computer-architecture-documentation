@@ -6,11 +6,26 @@
         <meta name="viewport" content="width=device-width">
     </head>
     <body>
-        <h1>COMPUTER NETWORKING AND ARCHITECTURE</h1>
+        <header>
+        <h1>COMPUTER NETWORKING AND BASICS</h1>
         <h2>FOUNDATION</h2>
         <p>Computer Networking Basics is a structured guide that explains how computers connect, communicate, and share information across networks.
         It breaks down key concepts into simple, organized sections to help beginners understand how modern networks operate.</p>
-
+        </header>
+         <nav class="sidebar">
+        <h3>TABLE OF CONTENTS</h3>
+      <ul>
+        <li><a href="#intro">Foundational Concept</a></li>
+        <li><a href="#types">Types of Networks</a></li>
+        <li><a href="#topology">Network Topology</a></li>
+        <li><a href="#devices">Networking Devices</a></li>
+        <li><a href="#protocols">Protocols</a></li>
+        <li><a href="#osi">OSI Model</a></li>
+        <li><a href="#ip">IP Addressing</a></li>
+        <li><a href="#security">Network Security</a></li>
+        <li><a href="#summary">Summary</a></li>
+      </ul>
+    </nav>
         <h3>Purpose of This Guide</h3>
         <p>This documentation is designed to:</p>
         <ul>
@@ -62,6 +77,7 @@
         </ul>
         <p>Now that the foundation is clear, the next section explores what computer networking actually is and why it exists in the first place.</p>
 
+        <section id="intro">
         <h2>FOUNDATIONAL CONCEPTS</h2>
         <h3>What is Computer Networking?</h3>
         <p>Computer networking is the process of connecting two or more computing devices so they can communicate and share resources. These devices can include computers, smartphones, servers, routers, and other hardware systems.
@@ -115,6 +131,468 @@
         Everything else in this document builds on that idea.</p>
         <p>Now that the basic idea of networking is clear, the next step is to understand the different ways networks are structured in real-world systems.</p>
         <p>Next: <strong>Types of Computer Networks</strong></p>
+        </section>
 
+        <section id="types">
+        <h2>CORE NETWORKING BUILDING BLOCKS</h2>
+        <h3>Types of Computer Networks</h3>
+        <p>Computer networks are classified based on their size, coverage area, and purpose.</p>
+        
+        <h4>LAN (Local Area Network)</h4>
+        <p>A LAN is a network that connects devices within a small geographical area such as a home, office, or school.</p>
+        <p>It is:</p>
+        <ul>
+            <li>Fast</li>
+            <li>Secure</li>
+            <li>Limited in range</li>
+        </ul>
+        <p>Example:</p>
+        <ul>
+            <li>School computer lab network</li>
+            <li>Office Wi-Fi network</li>
+        </ul>
+
+        <h4>WAN (Wide Area Network)</h4>
+        <p>A WAN covers a large geographical area, often connecting multiple LANs together.</p>
+        <p>It is:</p>
+        <ul>
+            <li>Much larger in scale</li>
+            <li>Slower compared to LAN</li>
+            <li>Dependent on external communication links</li>
+        </ul>
+        <p>Example:</p>
+        <ul>
+            <li>The Internet (largest WAN)</li>
+            <li>Bank networks connecting branches across cities</li>
+        </ul>
+
+        <h4>MAN (Metropolitan Area Network)</h4>
+        <p>A MAN spans a city or large campus.</p>
+        <p>It sits between LAN and WAN in size.</p>
+        <p>Example:</p>
+        <ul>
+            <li>City-wide cable TV network</li>
+            <li>University campus network across multiple buildings</li>
+        </ul>
+
+        <h4>PAN (Personal Area Network)</h4>
+        <p>A PAN is a very small network centered around an individual.</p>
+        <p>It connects personal devices.</p>
+        <p>Example:</p>
+        <ul>
+            <li>Bluetooth connection between phone and earbuds</li>
+            <li>Laptop connected to phone hotspot</li>
+        </ul>
+
+        <p><b>Key Insight</b></p>
+        <p>Network type depends mainly on <b>distance and scale of communication</b>, not technology.</p>
+        </section>
+
+        <section id="topology">
+        <h3>Network Topologies</h3>
+        <p>Topology refers to the physical or logical layout of devices in a network.</p>
+
+        
+        <h4>Star Topology</h4>
+        <p>All devices connect to a central hub or switch.</p>
+        <ul>
+            <li>Easy to manage</li>
+            <li>Failure of one device doesn’t affect others</li>
+            <li>Central device is critical point of failure</li>
+        </ul>
+        <p>Example:</p>
+        <ul>
+            <li>Office network using a switch</li>
+        </ul>
+
+        <h4>Bus Topology</h4>
+        <p>All devices share a single communication line.</p>
+        <ul>
+            <li>Simple and cheap</li>
+            <li>Performance drops as devices increase</li>
+            <li>A break in the main line affects the whole network</li>
+        </ul>
+        <p>Example:</p>
+        <ul>
+            <li>Early Ethernet systems</li>
+        </ul>
+
+        <h4>Ring Topology</h4>
+        <p>Devices are connected in a circular loop.</p>
+        <ul>
+            <li>Data travels in one direction</li>
+            <li>Easy to install</li>
+            <li>A single failure can disrupt the network</li>
+        </ul>
+        <p>Example:</p>
+        <ul>
+            <li>Some legacy telecom systems</li>
+        </ul>
+
+        <h4>Mesh Topology</h4>
+        <p>Every device is connected to multiple other devices.</p>
+        <ul>
+            <li>Very reliable</li>
+            <li>Expensive and complex</li>
+            <li>High redundancy</li>
+        </ul>
+        <p>Example:</p>
+        <ul>
+            <li>Internet backbone infrastructure (partial mesh)</li>
+        </ul>
+
+        <h4>Hybrid Topology</h4>
+        <p>A combination of two or more topologies.</p>
+        <ul>
+            <li>Flexible</li>
+            <li>Used in large organizations</li>
+            <li>Complex design</li>
+        </ul>
+        <p>Example:</p>
+        <ul>
+            <li>University networks combining star + mesh structures</li>
+        </ul>
+        <p>Key Insight</p>
+        <p>Topology determines **how data flows physically and logically inside a network**, not just how devices are connected.</p>
+        </section>
+
+        <section id="devices">
+        <h3>Networking Devices</h3>
+        <p>These are the hardware components that make networking possible.</p>
+
+        <h4>Router</h4>
+        <p>A router connects different networks and directs data between them.</p>
+        <ul>
+            <li>Connects LAN to WAN (internet)</li>
+            <li>Uses IP addresses to forward data</li>
+        </ul>
+        <p>Example:</p>
+        <ul>
+            <li>Home Wi-Fi router</li>
+        </ul>
+
+        <h4>Switch</h4>
+        <p>A switch connects devices within the same network and sends data only to the intended device.</p>
+        <ul>
+            <li>More efficient than hubs</li>
+            <li>Works mainly in LANs</li>
+        </ul>
+        <p>Example:</p>
+        <ul>
+            <li>Office network switch</li>
+        </ul>
+
+        <h4>Hub</h4>
+        <p>A hub sends data to all connected devices regardless of destination.</p>
+        <ul>
+            <li>Simple but inefficient</li>
+            <li>Mostly obsolete</li>
+        </ul>
+        <p>Example:</p>
+        <ul>
+            <li></li>
+        </ul>
+
+        <h4>Modem</h4>
+        <p>A modem converts digital signals to analog and vice versa for internet communication.</p>
+        <ul>
+            <li>Connects home network to ISP</li>
+            <li>Works with routers</li>
+        </ul>
+        
+        <h4>Access Point</h4>
+        <p>Expands wireless coverage by allowing devices to connect via Wi-Fi.</p>
+        <ul>
+            <li>Used in large buildings</li>
+            <li>Extends network range</li>
+        </ul>
+        <p><b>Key Insight</b></p>
+        <p>Networking devices act as <b>traffic controllers and communication bridges</b> inside and between networks.</p>
+        </section>
+
+        <p>Now that you understand how networks are built and structured, the next step is to understand how data actually moves inside them using rules and models.</p>
+
+        <p>Next: <strong>Protocols, OSI Model, and IP Addressing</strong></p>
+
+        <section id="protocols">
+        <h2>COMMUNICATION & LOGIC SYSTEMS</h2>
+        <h3>Networking Protocols</h3>
+        <p>Protocols are a set of rules that define how data is transmitted and received across a network. Without protocols, devices would not understand each other even if they are physically connected.</p>
+        
+        <h4>HTTP (HyperText Transfer Protocol)</h4>
+        <p>HTTP is used for transferring web pages over the internet.</p>
+        <ul>
+            <li>Used when browsing websites</li>
+            <li>Not secure by default</li>
+        </ul>
+        <p>Example:</p>
+        <ul>
+            <li>Loading a website page</li>
+        </ul>
+
+        <h4>HTTPS (Secure HTTP)</h4>
+        <p>HTTPS is the secure version of HTTP.</p>
+        <ul>
+            <li>Encrypts data during transmission</li>
+            <li>Protects user information</li>
+            <li>Used in banking, login pages, e-commerce</li>
+        </ul>
+        <p>Example:</p>
+        <ul>
+            <li>Online banking login pages</li>
+        </ul>
+
+        <h4>FTP (File Transfer Protocol)</h4>
+        <p>FTP is used for transferring files between computers over a network.</p>
+        <ul>
+            <li>Uploading and downloading files</li>
+            <li>Common in web hosting</li>
+        </ul>
+        <p>Example:</p>
+        <ul>
+            <li>Uploading website files to a server</li>
+        </ul>
+
+        <h4>TCP/IP (Transmission Control Protocol / Internet Protocol)</h4>
+        <p>This is the foundation of modern internet communication.</p>
+        <ul>
+            <li>TCP ensures data is delivered correctly and in order</li>
+            <li>IP handles addressing and routing of data</li>
+        </ul>
+        <p>Example:</p>
+        <ul>
+            <li>Sending an email or loading any website</li>
+        </ul>
+        <p><b>Key Insight</b></p>
+        <p>Protocols are the “language rules” of networks — they ensure devices communicate in a structured and reliable way.</p>
+        </section>
+
+        <section id="osi">
+        <h3>OSI Model (How Networking is Structured in Layers)</h3>
+        <p>The OSI Model is a conceptual framework that divides network communication into 7 layers. Each layer has a specific role.</p>
+
+        <h4>Layer 1: Physical Layer</h4>
+        <p>Handles physical transmission of data (cables, signals, hardware).</p>
+
+        <h4>Layer 2: Data Link Layer</h4>
+        <p>Ensures error-free transfer between devices on the same network.</p>
+
+        <h4>Layer 3: Network Layer</h4>
+        <p>Handles routing and logical addressing (IP addresses).</p>
+
+        <h4>Layer 4: Transport Layer</h4>
+        <p>Ensures reliable delivery of data between devices.</p>
+        <ul>
+            <li>Breaks data into packets</li>
+            <li>Reassembles them at destination</li>
+        </ul>
+
+        <h4>Layer 5: Session Layer</h4>
+        <p>Manages communication sessions between devices.</p>
+        <ul>
+            <li>Starts, maintains, and ends connections</li>
+        </ul>
+
+        <h4>Layer 6: Presentation Layer</h4>
+        <p>Translates data into a readable format.</p>
+        <ul>
+            <li>Encryption and compression</li>
+            <li>Data formatting</li>
+        </ul>
+
+        <h4>Layer 7: Application Layer</h4>
+        <p>Closest layer to the user.</p>
+        <ul>
+            <li>Web browsers, email clients, apps</li>
+            <li>Interface for network services</li>
+        </ul>
+        <p><b>Key Insight</b></p>
+        <p>The OSI model is not physical — it is a mental model that helps explain how data moves through a network step-by-step.</p>
+        </section>
+
+        <section id="ip">
+        <h3>IP Addressing</h3>
+        <p>An IP address is a unique identifier assigned to devices on a network. It allows devices to locate and communicate with each other.</p>
+
+        <h4>IPv4 (Internet Protocol Version 4)</h4>
+        <p>Most commonly used IP format.</p>
+        <ul>
+            <li>Written as four numbers separated by dots</li>
+            <li>Example format: 192.168.1.1</li>
+            <li>Limited number of addresses available</li>
+        </ul>
+
+        <h4>IPv6 (Internet Protocol Version 6)</h4>
+        <p>Newer version designed to replace IPv4.</p>
+        <ul>
+            <li>Much larger address space</li>
+            <li>Written in hexadecimal format</li>
+            <li>Solves IPv4 address shortage</li>
+        </ul>
+
+        <h4>Subnetting (Basic Idea)</h4>
+        <p>Subnetting divides a large network into smaller networks.</p>
+        <ul>
+            <li>Improves performance</li>
+            <li>Improves security</li>
+            <li>Helps manage large systems efficiently</li>
+        </ul>
+        <p><b>Key Insight</b></p>
+        <p>IP addressing is what allows data to find the correct destination across complex networks.</p>
+        <p>Now that you understand how communication works, the next step is understanding how networks are protected from threats and failures.</p>
+        </section>
+
+        <p>Next: <b>Network Security & Real-World Protection Systems</b></p>
+
+        <section id="security">
+        <h2>NETWORK SECURITY & REAL-WORLD PROTECTION</h2>
+
+        <h3>What is Network Security?</h3>
+        <p>Network security is the practice of protecting computer networks, devices, and data from unauthorized access, misuse, disruption, or attack.</p>
+        <p>It ensures three main goals:</p>
+        <ul>
+            <li><b>Confidentiality</b> → only authorized users can access data</li>
+            <li><b>Integrity</b> → data is not altered without permission</li>
+            <li><b>Availability</b> → systems remain accessible when needed</li>
+        </ul>
+
+        <h3>Firewalls</h3>
+        <p>A firewall is a security system that monitors and controls incoming and outgoing network traffic based on predefined rules.</p>
+        <ul>
+            <li>Acts as a barrier between trusted and untrusted networks</li>
+            <li>Can be hardware-based or software-based</li>
+            <li>Blocks suspicious or unauthorized traffic</li>
+        </ul>
+        <p>Example:</p>
+        <ul>
+            <li>A company firewall blocking unsafe websites or unknown connections</li>
+        </ul>
+
+        <h3>Encryption</h3>
+        <p>Encryption is the process of converting data into a coded form so that only authorized parties can read it.</p>
+        <ul>
+            <li>Protects sensitive information during transmission</li>
+            <li>Used in messaging, banking, and secure websites</li>
+            <li>Requires a key to decrypt data back to readable form</li>
+        </ul>
+        <p>Example:</p>
+        <ul>
+            <li>WhatsApp messages are encrypted so outsiders cannot read them</li>
+        </ul>
+
+        <h3>VPN (Virtual Private Network)</h3>
+        <p>A VPN creates a secure, encrypted connection over a public network.</p>
+        <ul>
+            <li>Hides user identity and location</li>
+            <li>Encrypts internet traffic</li>
+            <li>Commonly used for privacy and secure access to networks</li>
+        </ul>
+        <p>Example:</p>
+        <ul>
+            <li>Accessing company systems remotely from home securely</li>
+        </ul>
+
+        <h3>Common Network Threats</h3>
+        <p>Networks face several types of threats:</p>
+        <ol>
+            <li>Malware</li>
+            Malicious software designed to damage or disrupt systems.<br>
+            <li>Phishing</li>
+            Fake messages or websites used to steal sensitive information.<br>
+            <li>Denial of Service (DoS/DDoS)</li>
+            Overloading a system with traffic to make it unavailable.<br>
+            <li>Unauthorized Access</li>
+            Hackers gaining access to restricted systems or data.<br>
+        </ol>
+        
+        <h3>Basic Security Practices</h3>
+        <p>To protect networks, common practices include:</p>
+        <ul>
+            <li>Using strong passwords and multi-factor authentication</li>
+            <li>Keeping systems and software updated</li>
+            <li>Using firewalls and antivirus tools</li>
+            <li>Limiting access permissions (least privilege principle)</li>
+            <li>Encrypting sensitive data</li>
+        </ul>
+        <p>Key Insight</p>
+        <p>Security is not a single tool — it is a layered system of protection built on rules, tools, and user behavior.
+        Even a strong network design is useless without proper security.</p>
+        <p>Now that you understand structure, communication, and security, the final step is to consolidate everything into a clear, simple overview.</p>
+        </section>
+
+        <p>Next: <b>Summary & Final Revision Layer</b></p>
+
+        <section id="summary">
+        <h2>SUMMARY, CONSOLIDATION & REVISION</h2>
+        <h3>Full Concept Recap</h3>
+        <p>Computer networking is built on five main ideas:</p>
+        <ul>
+            <li>**Connection** → devices must be able to link together</li>
+            <li>**Structure** → networks are organized in types and topologies</li>
+            <li>**Communication** → protocols define how data is exchanged</li>
+            <li>**Identification** → IP addresses locate devices</li>
+            <li>**Protection** → security keeps everything safe</li>
+        </ul>
+        <p>Everything in networking fits into one of these categories.</p>
+
+        <h3>Big Picture Understanding</h3>
+        <p>If you strip everything down, networking works like this:</p>
+        <ul>
+          <li>Devices are connected (physically or wirelessly)</li>
+          <li>They are organized in a structure (LAN, WAN, topology)</li>
+          <li>They follow rules (protocols like TCP/IP, HTTP)</li>
+          <li>Data is addressed (IP addresses)</li>
+          <li>Data is protected (encryption, firewalls, VPNs)</li>  
+        </ul>
+        <p>That is the entire system in a simplified form.</p>
+
+        <h3>Concept Relationships (How everything connects)</h3>
+        <p>To avoid confusion:</p>
+        <ul>
+          <li><b>Devices + Topology → Network Structure (Layer 3)</b></li>
+          <li><b></b>**Protocols + OSI → Communication Logic (Layer 4)</b></li>
+          <li><b>IP Addressing → Data Targeting System</b></li>
+          <li><b>Security → Protection Layer over everything</b></li> 
+        </ul>
+        <p>Nothing exists in isolation — every part depends on another.</p>
+
+        <h3>Key Terms You Should Remember</h3>
+        <p>You don’t need to memorize everything, just these anchors:</p>
+        <ul>
+          <li>LAN / WAN / MAN / PAN</li>
+          <li>Router / Switch / Modem</li>
+          <li>TCP/IP / HTTP / HTTPS</li>
+          <li>OSI Model (7 layers)</li>
+          <li>IP Address (IPv4 / IPv6)</li>
+          <li>Firewall / Encryption / VPN</li>  
+        </ul>
+        <p>If you understand these, you understand networking basics.</p>
+
+        <h3>Common Mistakes Beginners Make</h3>
+        <ul>
+          <li>Mixing up <b>router vs switch</b></li>
+          <li>Thinking <b>OSI model is physical hardware</b></li>
+          <li>Believing <b>IP address = device permanently</b>**</li>
+          <li>Ignoring <b>security as optional (it’s not)</b></li>
+          <li>Trying to memorize instead of understanding flow</li>  
+        </ul>
+        <p></p>
+
+        <h3>Final Mental Model</h3>
+        <p>Think of networking like a delivery system:</p>
+        <ul>
+          <li><b>Devices</b> = houses and offices</li>
+          <li><b>Topology</b> = road layout</li>
+          <li><b>Protocols</b> = traffic rules</li>
+          <li><b>IP addresses</b> = house addresses</li>
+          <li><b>Data packets</b> = delivery packages</li>\
+          <li><b>Security</b> = guards, locks, and surveillance</li>  
+        </ul>
+        <p>If you understand this analogy deeply, you understand networking.</p>
+        </section>
+
+        <h3>FINAL CLOSURE</h3>
+        <p>Computer networking is not complicated when viewed as a system. It is simply:
+        “A structured way for devices to communicate, share data, and stay secure.”</p>
     </body>
 </html>
